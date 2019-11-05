@@ -30,33 +30,3 @@ def create_training_data(tokenized_sentences, word2vec_model, pos_or_neg, desire
             pruned_embedded_sentences.append(embedded_sentence) 
 
     return pruned_embedded_sentences, [pos_or_neg] * len(pruned_embedded_sentences)
-
-def train_word2vec_model(fp_list_tuple):
-    # for fp_tuple in fp_list_tuple:
-    pass
-
-
-def main(argv=None):
-    argv = argv or sys.argv
-    reports_dir = _validate_input(argv)
-
-
-def _print_usage():
-    print('Usage: python3 spotbugs_parser.py <reports_dir>')
-    print('reports_dir: Path to the directory of reports')
-
-
-def _validate_input(argv):
-    if len(argv) != 2:
-        _print_usage()
-        sys.exit(1)
-    reports_dir = argv[1]
-    if not os.path.isdir(reports_dir) and os.path.exists(reports_dir):
-        print('The reports_dir argument is not a file or does not exist. Exiting.')
-        _print_usage()
-        sys.exit(1)
-    return reports_dir
-
-
-if __name__ == '__main__':
-    sys.exit(main())
