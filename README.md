@@ -1,6 +1,8 @@
 # ECS289G
 The python file, BERTS_parts prepares the data in the format that BERT accepts.
 
+dev_100.csv and train_100.csv contain only 100 entries. I did this only to test whether BERT is working or not. The original files with labels are on google drive. I have shared the files with both of you. The link is, https://drive.google.com/drive/folders/1pevIh5eTjRdWW75d1xsPEW5P3BYnHfap?usp=sharing
+
 run.sh is the script file to run BERT.
 
 BERT code is available here, https://github.com/google-research/bert.git.
@@ -13,7 +15,7 @@ BERT model files are available online. They are:
 
 If you have access to Google TPU use the "large" model files.
 
-Put your data into the format BERT expects. Create a folder in the directory where you cloned BERT. You’ll be adding three separate files there called train.tsv dev.tsvand test.tsv (tsv, for tab separated values). In train.tsv and dev.tsv you should have four columns with no headers as follows:
+Put your data into the format BERT expects. Create a folder in the directory where you cloned BERT. You’ll be adding three separate files there called train.tsv dev.tsv and test.tsv (tsv, for tab separated values). In train.tsv and dev.tsv you should have four columns with no headers as follows:
 
 Column 1: An ID for the row (can be just a count, or even just the same number or letter for every row, if you don’t care to keep track of each individual example).
 
