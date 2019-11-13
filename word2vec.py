@@ -1,5 +1,8 @@
 import os
 import sys
+import time
+
+from gensim.models import Word2Vec
 
 
 def create_training_data(tokenized_sentences, word2vec_model, pos_or_neg, desired_length):
@@ -30,3 +33,8 @@ def create_training_data(tokenized_sentences, word2vec_model, pos_or_neg, desire
             pruned_embedded_sentences.append(embedded_sentence) 
 
     return pruned_embedded_sentences, [pos_or_neg] * len(pruned_embedded_sentences)
+
+def train_word2vec(tokenized_sentences):
+    # Train a word2vec model and save it.
+    model = Word2Vec(tokenized_sentences, min_count=1)
+    model.save('word2vec-{}.model'.format(int(time.time())))
