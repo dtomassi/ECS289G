@@ -38,7 +38,20 @@ the tokenized tweet as the input to the network has to be a fixed
 sized. Tweets above this length threshold will be dropped from the
 dataset and tweets below the threshold will be padded.
 
-\subsection{Feed-Forward Neural Network}
+\subsection{Feed-Forward Neural Network} The first approach we will
+take to classify tweets will be a feed-forward neural network
+architecture. We will try two different implementations with a single
+hidden layer and multiple hidden layers.
+
+\subsubsection{Single Hidden Layer} The single layered feed-forward
+neural network will be fully connected and have as input 20,000 sized
+vector with a single hidden layer of 1,000 neurons, and an output
+layer with one neuron for prediction. The activation function for the
+hidden layer will be the Rectified Linear Unit (ReLU) function and the
+output layer will have the activation function as sigmoid to make the
+prediction.
+
+\subsubsection{Multiple Hidden Layers}
 
 \subsection{Long Short-Term Memory}
 
