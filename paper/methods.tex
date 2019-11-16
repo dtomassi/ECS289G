@@ -31,7 +31,12 @@ model\footnote{https://radimrehurek.com/gensim/models/word2vec.html}
 on our tweets and use the embedding to encode them for input to the
 model.
 
-\subsection{Pruning}
+\subsection{Pruning} We will prune tweets from our dataset that fall
+outside the vocabular that was learning from our Word2Vec model. With
+the feed-forward neural network models, we will limit the length of
+the tokenized tweet as the input to the network has to be a fixed
+sized. Tweets above this length threshold will be dropped from the
+dataset and tweets below the threshold will be padded.
 
 \subsection{Feed-Forward Neural Network}
 
