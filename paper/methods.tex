@@ -1,7 +1,37 @@
 \section{Methods}
 \label{sec:methods}
 
-\subsection{Dataset}
+\subsection{Dataset} The dataset we will be using for our training and
+evaluation will be the My Information Bubble (MIB) dataset
+\citep{Cresci:2017:PSS:3041021.3055135}. It is a collection of genuine
+and spam tweets from bot accounts. There are thousands of accounts
+with millions of tweets. We will split the dataset by accounts with a
+90/10 split for training and validation data.
+
+\subsection{Pre-Processing} We will pre-process the tweets in order to
+normalize their format and reduce vocabulary size when we create an
+embedding.
+
+\subsubsection{Parsing} To parse the tweets, we employ the
+text-processing tool Ekphrasis
+\citep{baziotis-pelekis-doulkeridis:2017:SemEval2} that will performn
+tokenization, normalization and word segmentation. Using Ekphrasis
+allows for a uniform format for the tweets and abstracts away
+usernames and emojis which will decress the vocabulary size that will
+be used in the embedding.
+
+\subsubsection{Embedding} Since our vocabulary size will be large as
+the breadth of language, slang, and domain specific words is diverse.
+Using a one-hot-encoding, would increase the dimensonality of the
+input by a large margin. To overcome this obstricle, we will be use a
+Word2Vec embedding \citep{Mikolov:2013:DRW:2999792.2999959} which will
+decrease the dimensonality to 100 to represent one word. In particular
+we will train a Word2Vec
+model\footnote{https://radimrehurek.com/gensim/models/word2vec.html}
+on our tweets and use the embedding to encode them for input to the
+model.
+
+\subsection{Pruning}
 
 \subsection{Feed-Forward Neural Network}
 
