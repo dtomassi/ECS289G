@@ -61,4 +61,20 @@ be sigmoid.
 
 \subsection{Long Short-Term Memory}
 
-\subsection{Bidirectional Encoder Representations from Transformers}
+\subsection{Bidirectional Encoder Representations from Transformers (BERT)}
+BERT is available for download on Github. The input file for this tool should be in a \textit{.tsv} file format. BERT accepts input (\textit{train.tsv} and \textit{dev.tsv}) in a certain format.  The input format that BERT accepts is given below:
+\begin{itemize}
+\item Column 1 is the id for a row.
+\item Column 2 is a label for the row. This is an integer. These are classification labels that our classifier aims to predict.
+\item Column 3 is a column of all the same letter {\textemdash}  this is a throw-away column that we need to include because the BERT model expects it.
+\item Column 4 the text examples that we want to classify.
+\end{itemize}
+The file \textit{test.tsv} should be in another format. The format is given below:
+\begin{itemize}
+\item Column 1 is the id for a row.
+\item Column 2 is the text that we want to classify.
+\end{itemize}
+There are four BERT ``base'' models which have different pre-trained weights. We picked ``cased'' and ``uncased''. These are use for different letter cases.
+A script file is created to run BERT.  This script file contains the location of the input data files (\textit{.tsv}). It also contains entry to specify the location of BERT pre-trained weights.
+
+On running this script file, we got an error. The error  is ``Assign requires shapes of both tensors to match.''. On searching for solution for this error, we found that this error may be caused because TensorFlow does not delete previous checkpoints. However, we have not found the correct solution to this problem.
