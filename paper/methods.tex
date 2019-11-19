@@ -14,7 +14,7 @@ embedding.
 
 \subsubsection{Parsing} To parse the tweets, we will use three different ways depending on the embedding that will be mentioned in the next section. 
 
-In the first approach, we split our tweet sentence on the basis of comma and strip the data of double quotes. We used Word2Vec to train these sentences. We tried two other approaches, since this approach did not result in good results in terms of ``Accuracy''.
+In the first approach, we split our tweet sentence on the basis of comma and strip the data of double quotes. We used a Word2Vec embedding \citep{Mikolov:2013:DRW:2999792.2999959} which decreases the dimensionality to $100$ to represent one word. We tried two other approaches, since this approach did not result in good results in terms of ``Accuracy''.
 
 In one approach, we employ the
 text-processing tool Ekphrasis
@@ -30,10 +30,10 @@ In another approach, we will preprocess the tweets based on the preprocessing sc
 \subsubsection{Embedding} Since our vocabulary size will be large as
 the breadth of language, slang, and domain specific words is diverse.
 Using a one-hot-encoding, would increase the dimensionality of the
-input by a large margin. To overcome this obstacle, we used word embedding. We can either train the word embedding in our data or use a pre trained one. In this project we tried both of these approaches. In two approaches, we use a Word2Vec embedding \citep{Mikolov:2013:DRW:2999792.2999959} which decreases the dimensionality to $100$ to represent one word. In particular, we train a Word2Vec
+input by a large margin. To overcome this obstacle, we used word embedding. We can either train the word embedding in our data or use a pre trained one. In this project we tried both of these approaches. In two approaches, we used a Word2Vec embedding \citep{Mikolov:2013:DRW:2999792.2999959} which decreases the dimensionality to $100$ to represent one word. In particular, we train a Word2Vec
 model\footnote{https://radimrehurek.com/gensim/models/word2vec.html} on our tweets and use the embedding to encode them for input to the model. 
 
-In another approach, we used the pre-trained GloVE specific in twitter data which encode the vocabularies in 100 dimension vectors \footnote{https://nlp.stanford.edu/projects/glove/}. In particular, we used a set of the embedding from the pre-trained GloVE to encode our tweets to fed them as input to our model. 
+In another approach, we used the pre-trained GloVE specific in twitter data which encode the vocabularies in $100$ dimension vectors \footnote{https://nlp.stanford.edu/projects/glove/}. In particular, we used a set of the embedding from the pre-trained GloVE to encode our tweets to fed them as input to our model. 
 
 \subsection{Pruning} We pruned tweets from our dataset that fall
 outside the vocabularies that was learning from our Word2Vec model. With
