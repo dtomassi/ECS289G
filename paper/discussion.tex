@@ -7,3 +7,7 @@ layer architecure was able to perform better than its single layer
 counter part. This could be because of the deeper layers learning more
 complex relationships between the tokens in the tweet. As the single
 hidden layer was learning patterns of spam tweets.
+
+\subsection{Long Short-Term Memory }
+The assumption was that LSTM would achieved a batter accuracy, but it did not. In our problem the single hidden layer feed forward network achieved a better accuracy. However, we cannot tell if the difference in the accuracy because of the model choice or the embedding approach since we used different approach for each model. One of the future work that can be done here is to do the same LSTM model with word embedding that are trained in our data instead of using the pre trained Glove. 
+In order to try to increase the accuracy, different hyper-parameters for the model were examined but none of which achieved better result. Moreover, we modified the model architecture to include convolution layer with max pooling but the accuracy did not improve. Another suggestion for future work is to increase the number of neurons in the LSTM layer but that would need of course more computational power. 
