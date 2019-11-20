@@ -1,0 +1,47 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{prettyref}
+\usepackage{verbatim}
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[nohyphen]{underscore}
+\usepackage[capitalise]{cleveref}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\title{Finding Bot Accounts on Twitter via Tweets}
+\author{David Tomassi, Somdutta Bose, Saja Alayadhi}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The goal is to detect bot accounts on Twitter via the granularity of tweets and their contents. Recently, we have seen the phenomena of ``Fake News'' and people's ability to buy bot accounts to respond to tweets and make them seem more popular. The significance of the project is to be able to see which accounts on Twitter are actually human. The data set we used is the MIB Dataset (http://mib.projects.iit.cnr.it/dataset.html) which has a genuine and bot account information and their respective tweets. We tokenized tweets and did an embedding (GloVe and Word2vec) of the tokens and then appended them together to be the input to our model. We investigate the effectiveness of different approaches using a single layer feed-forward neural network, multiple layer feed-forward neural network and Long short-term memory (LSTM). The results we present, show how accurate and precise the model is at determining if a Twitter account is a bot by the tweets.
+\end{abstract}
+
+\input{introduction}
+
+\input{relatedwork}
+
+\input{methods}
+
+\input{results}
+
+\input{discussion}
+
+\input{conclusions}
+
+%\input{references}
+
+
+\input{author-contributions}
+
+\bibliographystyle{splncs04nat}
+\bibliography{main}
+
+\end{document}
