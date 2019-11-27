@@ -1,11 +1,15 @@
 \section{Results}
 \label{sec:results}
+\iffalse
 Three metrics, in addition to classification accuracy, that are commonly required for a neural network model on a binary classification problem are:
 \begin{itemize}
 \item Precision: This is the ratio of the true positives to true positives and false positives (true positives / (true positive + false positive)). This is percentage of our results which are relevant.
 \item Recall: This is the ratio of the true positives to true positives and false positives (true positives / (true positive + false negative)). This refers to the percentage of total relevant results correctly classified by our algorithm.
 \item F1 score: F1 is a metric that takes into account both precision and recall. This number can be maximized to make our model better. F1 score = $2$ *(precision * recall)/(precision + recall)
+ds
+
 \end{itemize}
+\fi
 \subsection{Feed-Forward Neural Network}
 Precision and recall are extremely important metrics to evaluate out model. Unfortunately, it is not possible to maximize both these scores at once. For problems for which both precision and recall are important, we can maximize the F1 score.
 
@@ -15,4 +19,4 @@ Precision and recall are extremely important metrics to evaluate out model. Unfo
 feed-forward neural network.
 
 \subsection{Long Short-Term Memory}
-This model achieved accuracy of $83.5$\% on the testing set and $89$\% on the validation set. The recall is  $0.86$, precision is, $0.800714$ and the F1 score is, $0.83$. Results of the modification in hyper-parameters and also the model architecture with pre-trained emending that all came with worse results are mention in the discussion section. 
+This model achieved accuracy of $83.5$\% on the testing set and $89$\% on the validation set. Results of the modification in hyper-parameters and also the model architecture with pre-trained emending that all came with worse results are mention in the discussion section. 
